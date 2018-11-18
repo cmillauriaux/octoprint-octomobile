@@ -1,0 +1,17 @@
+<div id="settings_plugin_octomobile">
+    <h1>OctoMobile plugin</h1>  
+    <div class="control-group" data-bind="visible: !isConnected()">
+        <h2>Connect to my account</h2>
+        <div class="controls">
+        	<input type="text" placeholder="Your mail address" class="input-xxlarge" data-bind="value: user">    
+		    <input type="password" placeholder="Your password" class="input-xxlarge" data-bind="value: pass">	
+		    <p data-bind="text: error"></p>
+		    <button class="btn btn-primary" data-bind="click: connect, enable: !isLoading()">{{ _('Connect') }}</button>
+        </div>
+    </div>
+    <div class="control-group" data-bind="visible: isConnected()">
+        <h2>My account</h2>
+        <p data-bind="text: mail"></p>
+		<button class="btn btn-primary" data-bind="click: disconnect">{{ _('Disconnect') }}</button>
+    </div>
+</div>
